@@ -17,6 +17,11 @@ func _process(_delta: float) -> void:
 		str(Game.has_respawn)
 	]
 
+	if Input.is_action_just_pressed("restart_level"):
+		Game.win = false
+		Game.has_respawn = false
+		get_tree().reload_current_scene()
+
 	var now := Time.get_ticks_msec()
 
 	# Wenn ein anderes Script den Label-Text gesetzt hat, merken wir ihn als Toast
