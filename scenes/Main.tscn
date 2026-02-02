@@ -1,0 +1,140 @@
+[gd_scene format=3 uid="uid://bv6utst64lwub"]
+
+[ext_resource type="Script" uid="uid://b8at8e4s34mwv" path="res://scripts/README.md.gd" id="1_rarhs"]
+[ext_resource type="Script" uid="uid://crlu2pldhhahn" path="res://scripts/Player.gd" id="2_rvslj"]
+[ext_resource type="Script" uid="uid://0hn5kiilongq" path="res://scripts/Exit_1.gd" id="3_0bbpv"]
+[ext_resource type="Script" uid="uid://cttequi72oeff" path="res://scripts/Checkpoint_1.gd" id="3_rarhs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rarhs"]
+size = Vector2(5000, 40)
+
+[sub_resource type="Gradient" id="Gradient_0bbpv"]
+offsets = PackedFloat32Array(0, 0.57228917, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_rarhs"]
+gradient = SubResource("Gradient_0bbpv")
+width = 5000
+height = 40
+fill_from = Vector2(0.98695654, 0)
+fill_to = Vector2(0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vcsgt"]
+size = Vector2(300, 30)
+
+[sub_resource type="Gradient" id="Gradient_rvslj"]
+offsets = PackedFloat32Array(0, 0.006024096, 0.73493975, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_0bbpv"]
+gradient = SubResource("Gradient_rvslj")
+width = 300
+height = 30
+fill_to = Vector2(1, 1)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_rvslj"]
+size = Vector2(32, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0bbpv"]
+size = Vector2(32, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rvslj"]
+size = Vector2(60, 60)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_0bbpv"]
+size = Vector2(60, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c01mt"]
+size = Vector2(80, 120)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_rarhs"]
+size = Vector2(80, 120)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nxtc6"]
+size = Vector2(220, 30)
+
+[sub_resource type="Gradient" id="Gradient_rarhs"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_vcsgt"]
+gradient = SubResource("Gradient_rarhs")
+width = 220
+height = 30
+
+[node name="Node" type="Node" unique_id=873807644]
+script = ExtResource("1_rarhs")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2068203834]
+
+[node name="FPS" type="Label" parent="CanvasLayer" unique_id=1294247878]
+self_modulate = Color(0.8980392, 0.90588236, 0.92156863, 1)
+anchors_preset = -1
+anchor_bottom = 0.018000001
+offset_right = 40.0
+offset_bottom = 11.3359995
+
+[node name="Ground" type="StaticBody2D" parent="." unique_id=1359070396]
+position = Vector2(400, 550)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground" unique_id=249943657]
+shape = SubResource("RectangleShape2D_rarhs")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground" unique_id=1588855244]
+self_modulate = Color(0.16862746, 0.18431373, 0.21176471, 1)
+texture = SubResource("GradientTexture2D_rarhs")
+
+[node name="Platform1" type="StaticBody2D" parent="." unique_id=720290165]
+position = Vector2(600, 420)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform1" unique_id=1036125354]
+shape = SubResource("RectangleShape2D_vcsgt")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform1" unique_id=1178792339]
+self_modulate = Color(0.21568628, 0.25490198, 0.31764707, 1)
+texture = SubResource("GradientTexture2D_0bbpv")
+
+[node name="Player" type="CharacterBody2D" parent="Platform1" unique_id=510168034]
+position = Vector2(-200, -120)
+script = ExtResource("2_rvslj")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform1/Player" unique_id=507753592]
+self_modulate = Color(0.22745098, 0.7490196, 0.972549, 1)
+texture = SubResource("PlaceholderTexture2D_rvslj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform1/Player" unique_id=346875234]
+shape = SubResource("RectangleShape2D_0bbpv")
+
+[node name="Camera2D" type="Camera2D" parent="Platform1/Player" unique_id=156747208]
+zoom = Vector2(0.5, 0.5)
+
+[node name="Checkpoint1" type="Area2D" parent="." unique_id=1225636017]
+position = Vector2(900, 450)
+script = ExtResource("3_rarhs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint1" unique_id=1350377315]
+shape = SubResource("RectangleShape2D_rvslj")
+
+[node name="Sprite2D" type="Sprite2D" parent="Checkpoint1" unique_id=465305484]
+self_modulate = Color(0.9607843, 0.61960787, 0.043137256, 1)
+texture = SubResource("PlaceholderTexture2D_0bbpv")
+
+[node name="Exit1" type="Area2D" parent="." unique_id=914840945]
+position = Vector2(1600, 450)
+script = ExtResource("3_0bbpv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit1" unique_id=1141779461]
+shape = SubResource("RectangleShape2D_c01mt")
+
+[node name="Sprite2D" type="Sprite2D" parent="Exit1" unique_id=1327217421]
+self_modulate = Color(0.65882355, 0.33333334, 0.96862745, 1)
+texture = SubResource("PlaceholderTexture2D_rarhs")
+
+[node name="Platform2" type="StaticBody2D" parent="." unique_id=1947671034]
+position = Vector2(1250, 360)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform2" unique_id=738800247]
+shape = SubResource("RectangleShape2D_nxtc6")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform2" unique_id=1041986319]
+self_modulate = Color(0.12156863, 0.43529412, 0.35686275, 1)
+texture = SubResource("GradientTexture2D_vcsgt")

@@ -1,0 +1,11 @@
+﻿# Godot
+.godot/
+.import/
+*.tmp
+
+# Export credentials
+export_credentials.cfg
+
+# Optional (C# / Mono)
+.mono/
+mono_crash.*.json
