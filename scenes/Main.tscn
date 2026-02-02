@@ -62,6 +62,7 @@ width = 220
 height = 30
 
 [node name="Node" type="Node" unique_id=873807644]
+process_mode = 3
 script = ExtResource("1_rarhs")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2068203834]
@@ -94,6 +95,7 @@ self_modulate = Color(0.21568628, 0.25490198, 0.31764707, 1)
 texture = SubResource("GradientTexture2D_0bbpv")
 
 [node name="Player" type="CharacterBody2D" parent="Platform1" unique_id=510168034]
+process_mode = 1
 position = Vector2(-200, -120)
 script = ExtResource("2_rvslj")
 

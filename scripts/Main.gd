@@ -12,11 +12,14 @@ func _ready() -> void:
 	_last_set_text = fps_label.text
 
 func _process(_delta: float) -> void:
-	var base := "FPS: %d | WIN: %s | CP: %s" % [
+	var base := "FPS: %d | WIN: %s | CP: %s | PAUSE: %s" % [
 		Engine.get_frames_per_second(),
 		str(Game.win),
-		str(Game.has_respawn)
+		str(Game.has_respawn),
+		str(get_tree().paused)
 	]
+	if Input.is_action_just_pressed("pause_game"):
+		get_tree().paused = !get_tree().paused
 
 	if Input.is_action_just_pressed("restart_level"):
 		Game.win = false
