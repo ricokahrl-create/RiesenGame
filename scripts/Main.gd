@@ -5,6 +5,7 @@ extends Node
 var toast_text := ""
 var toast_until_msec := 0
 var _last_set_text := ""
+var debug_visible := true
 
 func _ready() -> void:
 	fps_label.text = "FPS: ..."
@@ -32,9 +33,13 @@ func _process(_delta: float) -> void:
 	var shown := base
 	if now < toast_until_msec and toast_text != "":
 		shown = base + "\n" + toast_text
+	if Input.is_action_just_pressed("toggle_debug"):
+		debug_visible = !debug_visible
+		fps_label.visible = debug_visible
 
-	fps_label.text = shown
-	_last_set_text = shown
+	if debug_visible:
+		fps_label.text = shown
+		_last_set_text = shown
 
 	if Input.is_action_just_pressed("ui_cancel"):
 		if Engine.is_editor_hint():
