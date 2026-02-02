@@ -32,4 +32,7 @@ func _process(_delta: float) -> void:
 	_last_set_text = shown
 
 	if Input.is_action_just_pressed("ui_cancel"):
-		get_tree().quit()
+		if Engine.is_editor_hint():
+			get_tree().quit(0)
+		else:
+			get_tree().quit()

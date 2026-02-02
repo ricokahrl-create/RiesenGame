@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bv6utst64lwub"]
 
-[ext_resource type="Script" uid="uid://b8at8e4s34mwv" path="res://scripts/README.md.gd" id="1_rarhs"]
+[ext_resource type="Script" uid="uid://cxj6nr7q176rn" path="res://scripts/Main.gd" id="1_rarhs"]
 [ext_resource type="Script" uid="uid://crlu2pldhhahn" path="res://scripts/Player.gd" id="2_rvslj"]
 [ext_resource type="Script" uid="uid://0hn5kiilongq" path="res://scripts/Exit_1.gd" id="3_0bbpv"]
 [ext_resource type="Script" uid="uid://cttequi72oeff" path="res://scripts/Checkpoint_1.gd" id="3_rarhs"]
